@@ -1,6 +1,9 @@
 # app-mern-cards-front
 # in progress...
+![screenshot](https://github.com/xilen0x/app-mern-cards-front/blob/master/public/Screenshot_2020-08-02ReactApp.png)
+
 -------------------------------------------0-------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
