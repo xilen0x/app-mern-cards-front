@@ -16,14 +16,14 @@ export default class CreateNotes extends Component {
     }
 
     async componentDidMount() {
-        const res = await axios.get('http://localhost:4000/api/users');
+        const res = await axios.get('/api/users');
         this.setState({
             users: res.data.map(user => user.username),
             userSelected: res.data[0].username
         })
         //console.log(this.state.users);
         if (this.props.match.params.id) {
-            const res = await axios.get('http://localhost:4000/api/notes/' + this.props.match.params.id);
+            const res = await axios.get('/api/notes/' + this.props.match.params.id);
             //console.log(res.data);
             this.setState({
                 title: res.data.title,
@@ -46,9 +46,9 @@ export default class CreateNotes extends Component {
             author: this.state.userSelected
         };
         if (this.state.editing) {
-            await axios.put('http://localhost:4000/api/notes/' + this.state._id, newNote);
+            await axios.put('/api/notes/' + this.state._id, newNote);
         } else {
-            await axios.post('http://localhost:4000/api/notes', newNote);
+            await axios.post('/api/notes', newNote);
         }
         //console.log(res);
         window.location.href = '/';
